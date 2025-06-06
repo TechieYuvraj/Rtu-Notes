@@ -256,7 +256,7 @@ const unitsData = {
     { id: 2, name: "Unit 2: Cloud Computing Architecture", pdf: "https://drive.google.com/file/d/1EKFufqJbqO6Z6c61QovLOogo-CrUVjYI/view?usp=sharing" },
     { id: 3.1, name: "Unit 3.1: Virtualization Technology", pdf: "https://drive.google.com/file/d/1dkAPQcs5WCgDxHV4X4OEdFmDTGq5xUj_/view?usp=sharing" },
     { id: 3.2, name: "Unit 3.2: Virtualization Technology", pdf: "https://drive.google.com/file/d/1QAfsjLMZLpCECxQ79mD0ysfKuEwLEBOJ/view?usp=sharing" },
-    { id: 4, name: "Unit 4: Securing the Cloud", pdf: "https://drive.google.com/file/d/1NoZlwULrUTHcSm3Cg1j75LWBJzbdwl4H/view?usp=sharing" }, 
+    { id: 4, name: "Unit 4: Securing the Cloud", pdf: "https://drive.google.com/file/d/1NoZlwULrUTHcSm3Cg1j75LWBJzbdwl4H/view?usp=sharing" },
     { id: 4, name: "Unit 4: Securing the Cloud (alternate)", pdf: "https://docs.google.com/document/d/1NivJlgw2wmFLh9DxUvT6ZVVxFC__maoV/edit?usp=sharing&ouid=112886811253295072375&rtpof=true&sd=true" },
     { id: 5, name: "Unit 5: Cloud Platforms in Industry", pdf: "https://drive.google.com/file/d/1yhll4IT3Sc2mY1OcKzhvcDJx43tNK_rg/view?usp=sharing" },
   ],
@@ -316,41 +316,41 @@ function loadUnitsAndPYQs() {
     return;
   }
 
-  // units.forEach((unit) => {
-  //   const card = document.createElement("div");
-  //   card.className = "category-card";
-  //   card.innerHTML = `
-  //     <span>${unit.name}</span>
-  //     <a href="${unit.pdf}" target="_blank" rel="noopener noreferrer" class="download-btn" aria-label="Open ${unit.name} PDF">
-  //       <i class="fas fa-file-pdf"></i> Download PDF
-  //     </a>
-  //   `;
-  //   unitsList.appendChild(card);
-  // });
+//   units.forEach((unit) => {
+//     const card = document.createElement("div");
+//     card.className = "unit-card";
+//     card.innerHTML = `
+//       <span>${unit.name}</span>
+//       <a href="${unit.pdf}" target="_blank" rel="noopener noreferrer" class="custom-btn" aria-label="Open ${unit.name} PDF">
+//         <i class="fas fa-file-pdf"></i> View
+//       </a>
+//     `;
+//     unitsList.appendChild(card);
+//   });
 
-  // pyqs.forEach((pyq) => {
-  //   const card = document.createElement("div");
-  //   card.className = "category-card";
-  //   card.innerHTML = `
-  //     <span>${pyq.name}</span>
-  //     <a href="${pyq.pdf}" target="_blank" rel="noopener noreferrer" class="download-btn" aria-label="Open ${pyq.name} PDF">
-  //       <i class="fas fa-file-pdf"></i> Download PDF
-  //     </a>
-  //   `;
-  //   pyqsList.appendChild(card);
-  // });
+//   pyqs.forEach((pyq) => {
+//     const card = document.createElement("div");
+//     card.className = "unit-card";
+//     card.innerHTML = `
+//       <span>${pyq.name}</span>
+//       <a href="${pyq.pdf}" target="_blank" rel="noopener noreferrer" class="custom-btn" aria-label="Open ${pyq.name} PDF">
+//         <i class="fas fa-file-pdf"></i> View
+//       </a>
+//     `;
+//     pyqsList.appendChild(card);
+//   });
 }
 
-// Mobile menu toggle
-function setupMenuToggle() {
-  const menuToggle = document.getElementById("mobile-menu");
-  const navLinks = document.querySelector(".nav-links");
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-}
+// // Mobile menu toggle
+// function setupMenuToggle() {
+//   const menuToggle = document.getElementById("mobile-menu");
+//   const navLinks = document.querySelector(".nav-links");
+//   menuToggle.addEventListener("click", () => {
+//     navLinks.classList.toggle("active");
+//   });
+// }
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadUnitsAndPYQs();
-  setupMenuToggle();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   loadUnitsAndPYQs();
+//   setupMenuToggle();
+// });
