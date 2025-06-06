@@ -4,7 +4,6 @@ function getQueryParam(param) {
   return urlParams.get(param);
 }
 
-// Sample data for units and PYQs per subject
 const unitsData = {
   HV: [
     { id: 1, name: "Unit 1: Introduction", pdf: "https://drive.google.com/file/d/1BS9_auP-MwZrmKRli7YMMup4vutssIqK/view?usp=sharing" },
@@ -14,11 +13,11 @@ const unitsData = {
     { id: 5, name: "Unit 5: Harmony on Professional Ethics", pdf: "https://drive.google.com/file/d/1elsnBZD7qovD0E_aTSbegTjlBAKT098v/view?usp=sharing" },
   ],
   EM1: [
-    { id: 1, name: "Unit 1: Calculus", pdf: "" },
-    { id: 2, name: "Unit 2: Sequences and Series", pdf: "" },
-    { id: 3, name: "Unit 3: Fourier Series", pdf: "" },
-    { id: 4, name: "Unit 4: Multivariable Calculus (Differentiation)", pdf: "" },
-    { id: 5, name: "Unit 5: Multivariable Calculus (Integration)", pdf: "" },
+    { id: 1, name: "Unit 1: Calculus", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 2, name: "Unit 2: Sequences and Series", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 3, name: "Unit 3: Fourier Series", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 4, name: "Unit 4: Multivariable Calculus (Differentiation)", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 5, name: "Unit 5: Multivariable Calculus (Integration)", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
   ],
   BME: [
     { id: 1, name: "Unit 1: Fundamentals", pdf: "https://drive.google.com/file/d/1FXiuCQLfKONZ_G1gb0kJqRh7FVLX9179/view?usp=sharing" },
@@ -64,7 +63,7 @@ const unitsData = {
     { id: 7, name: "Unit: 3 - Structures", pdf: "https://drive.google.com/file/d/1yi9xvrtmIVvOicfYl-w911FhjeNw8e6K/view?usp=drive_link" }
   ],
   BEE: [
-    { id: 1, name: "Unit: 1 - DC Circuits", pdf: "" },  // Waiting
+    { id: 1, name: "Unit: 1 - DC Circuits", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
     { id: 2, name: "Unit: 2 - AC Circuits", pdf: "https://drive.google.com/file/d/120CERJiXZIZwjiW_dl-zTDqnlmrwOTZl/view?usp=sharing" },
     { id: 3, name: "Unit: 3 - Transformers", pdf: "https://drive.google.com/file/d/1dAenGfvP44exEG1FHTaozFR0aeQ2JwOh/view?usp=sharing" },
     { id: 4, name: "Unit: 4 - Electrical Machines", pdf: "https://drive.google.com/file/d/14AIu5LrzEk0Pqw9OzXxezZkPJEwDAiHe/view?usp=sharing" },
@@ -176,23 +175,23 @@ const unitsData = {
     { id: 5, name: "Unit 5: Graph Theory", pdf: "https://drive.google.com/file/d/15FRYURU4GIpckWOhbXIF1gX9MUeTfWeq/view?usp=sharing" },
   ],
   AOA: [
-    { id: 1, name: "Unit 1: Background and Divide And Conquer Method", pdf: "" },
-    { id: 2, name: "Unit 2: Greedy Method and Dynamic Programming", pdf: "" },
-    { id: 3, name: "Unit 3: BranchAnd Bound", pdf: "" },
-    { id: 4, name: "Unit 4: Pattern Matching Algorithms", pdf: "" },
-    { id: 5, name: "Unit 5: Assignment and Randomized Algorithms", pdf: "" },
-    { id: 6, name: "Unit 6: Tractable and Untractable Problems", pdf: "" }
+    { id: 1, name: "Unit 1: Background and Divide And Conquer Method", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 2, name: "Unit 2: Greedy Method and Dynamic Programming", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 3, name: "Unit 3: BranchAnd Bound", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 4, name: "Unit 4: Pattern Matching Algorithms", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 5, name: "Unit 5: Assignment and Randomized Algorithms", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 6, name: "Unit 6: Tractable and Untractable Problems", pdf: "ERROR: Please REPORT to OWNER. Thank You." }
   ],
   CD: [
-    { id: 1, name: "Unit 1: Introduction", pdf: "" },
-    { id: 2, name: "Unit 2: Review of CFG Ambiguity of grammars", pdf: "" },
-    { id: 3, name: "Unit 3: Syntax directed definitions", pdf: "" },
-    { id: 4, name: "Unit 4: Storage organization", pdf: "" },
-    { id: 5, name: "Unit 5: Definition of basic block control", pdf: "" },
-    { id: 6, name: "Unit 6: Flow Graphs", pdf: "" }
+    { id: 1, name: "Unit 1: Introduction", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 2, name: "Unit 2: Review of CFG Ambiguity of grammars", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 3, name: "Unit 3: Syntax directed definitions", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 4, name: "Unit 4: Storage organization", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 5, name: "Unit 5: Definition of basic block control", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 6, name: "Unit 6: Flow Graphs", pdf: "ERROR: Please REPORT to OWNER. Thank You." }
   ],
   ITC: [
-    { id: 1, name: "Unit 1: Introduction to information theory", pdf: "" },
+    { id: 1, name: "Unit 1: Introduction to information theory", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
     { id: 2, name: "Unit 2: Source coding schemes for data compaction", pdf: "https://drive.google.com/file/d/1MQyB8R5F0aw7Z9x-35i_RO8dMexY6KVM/view?usp=sharing" },
     { id: 3, name: "Unit 3: Linear Block Code", pdf: "https://drive.google.com/file/d/1qemAfqYCSJ9NB81hqqLxIaPfPcnjvNT9/view?usp=sharing" },
     { id: 4, name: "Unit 4: Cyclic Code", pdf: "https://drive.google.com/file/d/1V5S22mN_44COsuDcH7-Jop-m2uRJ6dfo/view?usp=sharing" },
@@ -214,19 +213,19 @@ const unitsData = {
     { id: 5, name: "Unit 5: UNIX and Linux operating systems", pdf: "https://drive.google.com/file/d/1QF-KUWsHEOh6BoWdEOVbEH2mz3a8XSOH/view?usp=sharing" }
   ],
   WC: [
-    { id: 1, name: "Unit 1: Introduction", pdf: "" },
-    { id: 2, name: "Unit 2: Wireless Channels", pdf: "" },
-    { id: 3, name: "Unit 3: Cellular Architecture", pdf: "" },
-    { id: 4, name: "Unit 4: Digital Signaling For Fading Channels", pdf: "" },
-    { id: 5, name: "Unit 5: Multipath Mitigation Techniques", pdf: "" },
-    { id: 6, name: "Unit 6: Multiple Antenna Techniques", pdf: "" }
+    { id: 1, name: "Unit 1: Introduction", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 2, name: "Unit 2: Wireless Channels", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 3, name: "Unit 3: Cellular Architecture", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 4, name: "Unit 4: Digital Signaling For Fading Channels", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 5, name: "Unit 5: Multipath Mitigation Techniques", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 6, name: "Unit 6: Multiple Antenna Techniques", pdf: "ERROR: Please REPORT to OWNER. Thank You." }
   ],
   MPI_IT: [
-    { id: 1, name: "Unit 1: Introduction", pdf: "" },
-    { id: 2, name: "Unit 2: 8085 Microprocessor Architecture", pdf: "" },
-    { id: 3, name: "Unit 3: Assembly Language Programming", pdf: "" },
-    { id: 4, name: "Unit 4: Stack & Subroutines", pdf: "" },
-    { id: 5, name: "Unit 5: Interfacing Concepts", pdf: "" }
+    { id: 1, name: "Unit 1: Introduction", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 2, name: "Unit 2: 8085 Microprocessor Architecture", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 3, name: "Unit 3: Assembly Language Programming", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 4, name: "Unit 4: Stack & Subroutines", pdf: "ERROR: Please REPORT to OWNER. Thank You." },
+    { id: 5, name: "Unit 5: Interfacing Concepts", pdf: "ERROR: Please REPORT to OWNER. Thank You." }
   ],
   DIP: [
     { id: 1, name: "Unit 1: Introduction to Image Processing", pdf: "https://drive.google.com/file/d/1-DJgNvfTf3nSOPGvSBgppEJ7ngUOA5zu/view?usp=sharing" },
@@ -282,13 +281,6 @@ const unitsData = {
     { id: 4, name: "Unit 4: Distributed Shared Memory", pdf: "https://drive.google.com/file/d/1pkGUg68a-WWyVMAKvt2jM8gwXs7JoINs/view?usp=sharing" },
     { id: 5, name: "Unit 5: Distributed Agreement", pdf: "https://drive.google.com/file/d/1I9i671CRbl1IwGyGkLq0PtQpV2KP7BHz/view?usp=sharing" },
   ],
-  // HV: [
-  //   { id: 1, name: "Unit 1: Mechanics", pdf: "pdfs/physics-unit1.pdf" },
-  //   { id: 2, name: "Unit 2: Thermodynamics", pdf: "pdfs/physics-unit2.pdf" },
-  //   { id: 3, name: "Unit 3: Optics", pdf: "pdfs/physics-unit3.pdf" },
-  //   { id: 4, name: "Unit 4: Electromagnetism", pdf: "pdfs/physics-unit4.pdf" },
-  //   { id: 5, name: "Unit 5: Modern Physics", pdf: "pdfs/physics-unit5.pdf" },
-  // ],
   // Add more subjects and units as needed
 };
 
