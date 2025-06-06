@@ -235,6 +235,7 @@ body {
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.fa-solid,
 .fas,
 .far {
   font-family: "Font Awesome 6 Free";
@@ -246,6 +247,11 @@ body {
   font-weight: 400;
 }
 
+.fa-book-open-reader:before {
+    content: "\f5da"
+}
+
+.fa-solid,
 .fab,
 .fas,
 .fa {
