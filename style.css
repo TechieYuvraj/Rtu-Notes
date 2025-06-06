@@ -6,25 +6,27 @@
 }
 
 @font-face {
-    font-family: "Font Awesome 6 Free";
-    font-style: normal;
-    font-weight: 400;
-    font-display: block;
-    src: url(/assets/fonts/fa-regular-400.woff2) format("woff2"), url(/assets/fonts/fa-regular-400.ttf) format("truetype")
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(/assets/fonts/fa-regular-400.woff2) format("woff2"), url(/assets/fonts/fa-regular-400.ttf) format("truetype")
 }
+
 @font-face {
-    font-family: "Font Awesome 6 Brands";
-    font-style: normal;
-    font-weight: 400;
-    font-display: block;
-    src: url(/assets/fonts/fa-brands-400.woff2) format("woff2"), url(/assets/fonts/fa-brands-400.ttf) format("truetype")
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(/assets/fonts/fa-brands-400.woff2) format("woff2"), url(/assets/fonts/fa-brands-400.ttf) format("truetype")
 }
+
 @font-face {
-    font-family: "Font Awesome 6 Free";
-    font-style: normal;
-    font-weight: 900;
-    font-display: block;
-    src: url(/assets/fonts/fa-solid-900.woff2) format("woff2"), url(/assets/fonts/fa-solid-900.ttf) format("truetype")
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(/assets/fonts/fa-solid-900.woff2) format("woff2"), url(/assets/fonts/fa-solid-900.ttf) format("truetype")
 }
 
 body {
@@ -88,7 +90,7 @@ body {
 }
 
 .fa-bars:before {
-    content: "\f0c9"
+  content: "\f0c9"
 }
 
 /* Hero Section */
@@ -227,48 +229,57 @@ body {
 }
 
 .social-icons a {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 30px;
-    transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 30px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.fas, .far {
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
+.fas,
+.far {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
 }
+
 .fab {
-    font-family: "Font Awesome 6 Brands";
-    font-weight: 400;
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
 }
-.fab, .fas, .fa {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: var(--fa-display, inline-block);
-    font-style: normal;
-    font-variant: normal;
-    line-height: 1;
-    text-rendering: auto
+
+.fab,
+.fas,
+.fa {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto
 }
+
 .fa-facebook-f:before {
-    content: "\f39e";
-    color: #3b5998;
+  content: "\f39e";
+  color: #3b5998;
 }
+
 .fa-instagram:before {
-    content: "\f16d";
-    color: #e1306c;
+  content: "\f16d";
+  color: #e1306c;
 }
+
 .fa-linkedin-in:before {
-    content: "\f0e1";
-    color:#0077b5;
+  content: "\f0e1";
+  color: #0077b5;
 }
+
 .fa-youtube:before {
-    content: "\f167";
-    color: #ff0000;
+  content: "\f167";
+  color: #ff0000;
 }
 
 .social-icons a:hover {
-    transform: scale(1.4);
+  transform: scale(1.4);
 }
 
 
