@@ -139,18 +139,19 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(26, 115, 232, 0.1);
   padding: 0.75rem 1.5rem;
+  /* font-size: 1.2rem; */
+  min-block-size: min-content;
   width: 200px;
+  height: 150px;
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease;
   color: #6D29D8;
   font-weight: 600;
-  font-size: 1.2rem;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 150px;
 }
 
 .category-card:hover {
