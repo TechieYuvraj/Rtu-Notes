@@ -250,6 +250,9 @@ body {
 .fa-book-open-reader:before {
     content: "\f5da"
 }
+.fa-file-pdf:before {
+    content: "\f1c1"
+}
 
 .fa-solid,
 .fab,
