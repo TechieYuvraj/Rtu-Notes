@@ -315,42 +315,5 @@ function loadUnitsAndPYQs() {
     pyqsList.textContent = "No data available for this subject.";
     return;
   }
-
-//   units.forEach((unit) => {
-//     const card = document.createElement("div");
-//     card.className = "unit-card";
-//     card.innerHTML = `
-//       <span>${unit.name}</span>
-//       <a href="${unit.pdf}" target="_blank" rel="noopener noreferrer" class="custom-btn" aria-label="Open ${unit.name} PDF">
-//         <i class="fas fa-file-pdf"></i> View
-//       </a>
-//     `;
-//     unitsList.appendChild(card);
-//   });
-
-//   pyqs.forEach((pyq) => {
-//     const card = document.createElement("div");
-//     card.className = "unit-card";
-//     card.innerHTML = `
-//       <span>${pyq.name}</span>
-//       <a href="${pyq.pdf}" target="_blank" rel="noopener noreferrer" class="custom-btn" aria-label="Open ${pyq.name} PDF">
-//         <i class="fas fa-file-pdf"></i> View
-//       </a>
-//     `;
-//     pyqsList.appendChild(card);
-//   });
 }
 
-// // Mobile menu toggle
-// function setupMenuToggle() {
-//   const menuToggle = document.getElementById("mobile-menu");
-//   const navLinks = document.querySelector(".nav-links");
-//   menuToggle.addEventListener("click", () => {
-//     navLinks.classList.toggle("active");
-//   });
-// }
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   loadUnitsAndPYQs();
-//   setupMenuToggle();
-// });
