@@ -36,12 +36,13 @@ Redirect 301 /6th-semester/ https://rtunotes.in/subject.html?year=3&semester=6
 Redirect 301 /7th-semester/ https://rtunotes.in/subject.html?year=4&semester=7
 Redirect 301 /8th-semester/ https://rtunotes.in/subject.html?year=4&semester=8
 Redirect 301 /1st-year-notes/ https://rtunotes.in/semester.html?year=1
-Redirect 301 /2nd-year-notes/ https://rtunotes.in/Semester.html?year=2
-Redirect 301 /3rd-year-notes/ https://rtunotes.in/Semester.html?year=3
-Redirect 301 /4th-year-notes/ https://rtunotes.in/Semester.html?year=4
+Redirect 301 /2nd-year-notes/ https://rtunotes.in/semester.html?year=2
+Redirect 301 /3rd-year-notes/ https://rtunotes.in/semester.html?year=3
+Redirect 301 /4th-year-notes/ https://rtunotes.in/semester.html?year=4
 Redirect 301 /wp-content/uploads/2024/08/CSE-Sylabus-3rd-Sem.pdf https://rtunotes.in/assets/syllabus/CSE-Sylabus-3rd-Sem.pdf
 Redirect 301 /wp-content/uploads/2024/09/CSE-Sylabus-3rd-Sem.pdf https://rtunotes.in/assets/syllabus/CSE-Sylabus-3rd-Sem.pdf
 Redirect 301 /wp-content/uploads/2024/09/CSE-Sylabus-4th-Sem.pdf https://rtunotes.in/assets/syllabus/CSE-Sylabus-4th-Sem.pdf
+Redirect 301 /wp-content/uploads/2024/08/CSE-Sylabus-4th-Sem.pdf https://rtunotes.in/assets/syllabus/CSE-Sylabus-4th-Sem.pdf
 Redirect 301 /wp-content/uploads/2024/08/CSE-Sylabus-1st-Year.pdf https://rtunotes.in/assets/syllabus/CSE-Sylabus-1st-Year.pdf
 Redirect 301 /wp-content/uploads/2024/09/CSE-Sylabus-1st-Year.pdf https://rtunotes.in/assets/syllabus/CSE-Sylabus-1st-Year.pdf
 Redirect 301 /wp-content/uploads/2024/08/CSE-Sylabus-5th-6th-Sem.pdf https://rtunotes.in/assets/syllabus/CSE-Sylabus-5th-6th-Sem.pdf
@@ -49,4 +50,5 @@ Redirect 301 /wp-content/uploads/2024/08/CSE-Sylabus-5th-6th-Sem.pdf https://rtu
 Redirect 301 /category/uncategorized/ https://rtunotes.in
 Redirect 301 /comments/feed/ https://rtunotes.in
 Redirect 301 /feed/ https://rtunotes.in
+Redirect 301 /about/ https://yuvraj.rtunotes.in
 Redirect 301 /wp-includes/js/dist/vendor/wp-polyfill-importmap.min.js?ver=1.8.2/ https://rtunotes.in
