@@ -37,7 +37,7 @@ Redirect 301 /7th-semester/ https://rtunotes.in/subject.html?year=4&semester=7
 Redirect 301 /8th-semester/ https://rtunotes.in/subject.html?year=4&semester=8
 Redirect 301 /1st-year-notes/ https://rtunotes.in/semester.html?year=1
 Redirect 301 /2nd-year-notes/ https://rtunotes.in/semester.html?year=2
-Redirect 301 /3rd-year-notes/ https://rtunotes.in/semestEr.html?year=3
+Redirect 301 /3rd-year-notes/ https://rtunotes.in/semester.html?year=3
 Redirect 301 /4th-year-notes/ https://rtunotes.in/semester.html?year=4
 Redirect 301 /wp-content/uploads/2024/08/CSE-Sylabus-3rd-Sem.pdf https://rtunotes.in/assets/syllabus/CSE-Sylabus-3rd-Sem.pdf
 Redirect 301 /wp-content/uploads/2024/09/CSE-Sylabus-3rd-Sem.pdf https://rtunotes.in/assets/syllabus/CSE-Sylabus-3rd-Sem.pdf
