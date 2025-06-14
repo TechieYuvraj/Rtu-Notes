@@ -4,6 +4,7 @@ Redirect 301 /programming-for-problem-solving-pps/ https://rtunotes.in/units-pyq
 Redirect 301 /advanced-engineering-mathematics-aem/ https://rtunotes.in/units-pyqs.html?semester=3&subject=AEM
 Redirect 301 /discrete-mathematics-structures-dms/ https://rtunotes.in/units-pyqs.html?semester=4&subject=DMS
 Redirect 301 /computer-graphics-and-multimedia/ https://rtunotes.in/units-pyqs.html?semester=6&subject=CGM
+Redirect 301 /Unit.html?subject=CGM	https://rtunotes.in/units-pyqs.html?semester=6&subject=CGM
 Redirect 301 /basic-electrical-engineering-bee/ https://rtunotes.in/units-pyqs.html?semester=2&subject=BEE
 Redirect 301 /basic-mechanical-engineering-bme/ https://rtunotes.in/units-pyqs.html?semester=1&subject=BME
 Redirect 301 /microprocessor-and-interfacempi/ https://rtunotes.in/units-pyqs.html?semester=4&subject=MPI_CSE
