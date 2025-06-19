@@ -4,50 +4,6 @@
   <url><loc>https://rtunotes.in/</loc></url>
   <url><loc>https://rtunotes.in/year.html</loc></url>
 
-  <!-- Pretty URLs from .htaccess redirects -->
-  <!-- <url><loc>https://rtunotes.in/managerial-economics-and-financial-accounting-mefa/</loc></url>
-  <url><loc>https://rtunotes.in/computer-architecture-and-organization-cao/</loc></url>
-  <url><loc>https://rtunotes.in/programming-for-problem-solving-pps/</loc></url>
-  <url><loc>https://rtunotes.in/advanced-engineering-mathematics-aem/</loc></url>
-  <url><loc>https://rtunotes.in/discrete-mathematics-structures-dms/</loc></url>
-  <url><loc>https://rtunotes.in/computer-graphics-and-multimedia/</loc></url>
-  <url><loc>https://rtunotes.in/basic-electrical-engineering-bee/</loc></url>
-  <url><loc>https://rtunotes.in/basic-mechanical-engineering-bme/</loc></url>
-  <url><loc>https://rtunotes.in/microprocessor-and-interfacempi/</loc></url>
-  <url><loc>https://rtunotes.in/information-security-system-iss/</loc></url>
-  <url><loc>https://rtunotes.in/principle-of-communication-poc/</loc></url>
-  <url><loc>https://rtunotes.in/digital-image-processing-dip/</loc></url>
-  <url><loc>https://rtunotes.in/microprocessors-interfaces/</loc></url>
-  <url><loc>https://rtunotes.in/artificial-intelligence-ai/</loc></url>
-  <url><loc>https://rtunotes.in/technical-communication-tc/</loc></url>
-  <url><loc>https://rtunotes.in/software-engineering-se/</loc></url>
-  <url><loc>https://rtunotes.in/digital-electronics-de/</loc></url>
-  <url><loc>https://rtunotes.in/communication-skills-cs/</loc></url>
-  <url><loc>https://rtunotes.in/wireless-communication/</loc></url>
-  <url><loc>https://rtunotes.in/distributed-system-ds/</loc></url>
-  <url><loc>https://rtunotes.in/analysis-of-algorithm/</loc></url>
-  <url><loc>https://rtunotes.in/machine-learning-ml/</loc></url>
-  <url><loc>https://rtunotes.in/cloud-computing-cc/</loc></url>
-  <url><loc>https://rtunotes.in/operating-system/</loc></url>
-  <url><loc>https://rtunotes.in/compiler-design/</loc></url>
-  <url><loc>https://rtunotes.in/chemistry/</loc></url>
-  <url><loc>https://rtunotes.in/human-values-hv/</loc></url>
-  <url><loc>https://rtunotes.in/physics/</loc></url>
-  <url><loc>https://rtunotes.in/engineering-mathematics-2/</loc></url>
-  <url><loc>https://rtunotes.in/1st-semester/</loc></url>
-  <url><loc>https://rtunotes.in/2nd-semester/</loc></url>
-  <url><loc>https://rtunotes.in/3rd-semester/</loc></url>
-  <url><loc>https://rtunotes.in/4th-semester/</loc></url>
-  <url><loc>https://rtunotes.in/5th-semester/</loc></url>
-  <url><loc>https://rtunotes.in/6th-semester/</loc></url>
-  <url><loc>https://rtunotes.in/7th-semester/</loc></url>
-  <url><loc>https://rtunotes.in/8th-semester/</loc></url>
-  <url><loc>https://rtunotes.in/1st-year-notes/</loc></url>
-  <url><loc>https://rtunotes.in/2nd-year-notes/</loc></url>
-  <url><loc>https://rtunotes.in/3rd-year-notes/</loc></url>
-  <url><loc>https://rtunotes.in/4th-year-notes/</loc></url>
-  <url><loc>https://rtunotes.in/about/</loc></url> -->
-
   <!-- Target URLs from .htaccess redirects -->
   <url><loc>https://rtunotes.in/units-pyqs.html?semester=3&amp;subject=MEFA</loc></url>
   <url><loc>https://rtunotes.in/units-pyqs.html?semester=6&amp;subject=CAO</loc></url>
