@@ -5,7 +5,7 @@
   <url><loc>https://rtunotes.in/year.html</loc></url>
 
   <!-- Pretty URLs from .htaccess redirects -->
-  <url><loc>https://rtunotes.in/managerial-economics-and-financial-accounting-mefa/</loc></url>
+  <!-- <url><loc>https://rtunotes.in/managerial-economics-and-financial-accounting-mefa/</loc></url>
   <url><loc>https://rtunotes.in/computer-architecture-and-organization-cao/</loc></url>
   <url><loc>https://rtunotes.in/programming-for-problem-solving-pps/</loc></url>
   <url><loc>https://rtunotes.in/advanced-engineering-mathematics-aem/</loc></url>
@@ -46,7 +46,7 @@
   <url><loc>https://rtunotes.in/2nd-year-notes/</loc></url>
   <url><loc>https://rtunotes.in/3rd-year-notes/</loc></url>
   <url><loc>https://rtunotes.in/4th-year-notes/</loc></url>
-  <url><loc>https://rtunotes.in/about/</loc></url>
+  <url><loc>https://rtunotes.in/about/</loc></url> -->
 
   <!-- Target URLs from .htaccess redirects -->
   <url><loc>https://rtunotes.in/units-pyqs.html?semester=3&amp;subject=MEFA</loc></url>
