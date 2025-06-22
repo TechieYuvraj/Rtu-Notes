@@ -66,7 +66,7 @@ const pyqsData = {
         { id: 5, name: "Waiting...", pdf: "#" },
         { id: 6, name: "Waiting...", pdf: "#" },
     ],
-    OPPs: [
+    OOps: [
         { id: 4, name: "Waiting...", pdf: "" },
         { id: 5, name: "Waiting...", pdf: "#" },
         { id: 6, name: "Waiting...", pdf: "#" },
