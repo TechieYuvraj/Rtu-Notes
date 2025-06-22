@@ -99,7 +99,7 @@ const unitsData = {
     { id: 4, name: "Unit 4: Trees", pdf: "https://drive.google.com/file/d/1cg6qX-a3Kd8dsf19aQAU5VgXQefLmSy7/view?usp=sharing" },
     { id: 5, name: "Unit 5: Graphs", pdf: "https://drive.google.com/file/d/1p07WzR90LJEx6nP6--54I7DKmS1wDdxs/view?usp=sharing" },
   ],
-  OOPS: [
+  OOPs: [
     { id: 1, name: "Unit 1: Introduction", pdf: "https://drive.google.com/file/d/1MiY23pwdpXV1dhLSbnpPccti6PoxIffl/view?usp=sharing" },
     { id: 2, name: "Unit 2: Concept of reference", pdf: "https://drive.google.com/file/d/1R5YP3zsx21717YGgwACNUkmwiAzxlSlJ/view?usp=sharing" },
     { id: 3, name: "Unit 3: Inheritance", pdf: "https://drive.google.com/file/d/17ehh-LxhOC4XsSVbdQHlCRyiaToC7G0H/view?usp=sharing" },
