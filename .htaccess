@@ -56,4 +56,5 @@ Redirect 301 /category/uncategorized/ https://rtunotes.in
 Redirect 301 /comments/feed/ https://rtunotes.in
 Redirect 301 /feed/ https://rtunotes.in
 Redirect 301 /about/ https://yuvraj.rtunotes.in
+Redirect 301 /Waiting... https://rtunotes.in	
 Redirect 301 /wp-includes/js/dist/vendor/wp-polyfill-importmap.min.js?ver=1.8.2/ https://rtunotes.in
