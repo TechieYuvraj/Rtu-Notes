@@ -1,13 +1,21 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Canonical redirect: Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.rtunotes\.in [NC]
+RewriteRule ^(.*)$ https://rtunotes.in/$1 [L,R=301]
+
+# Canonical redirect: Redirect http to https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://rtunotes.in/$1 [L,R=301]
+
+# Direct redirects from old URLs to final URLs (optimized to avoid chains)
 Redirect 301 /managerial-economics-and-financial-accounting-mefa/ https://rtunotes.in/units-pyqs.html?semester=3&subject=MEFA
 Redirect 301 /computer-architecture-and-organization-cao/ https://rtunotes.in/units-pyqs.html?semester=6&subject=CAO
 Redirect 301 /programming-for-problem-solving-pps/ https://rtunotes.in/units-pyqs.html?semester=2&subject=PPS
 Redirect 301 /advanced-engineering-mathematics-aem/ https://rtunotes.in/units-pyqs.html?semester=3&subject=AEM
 Redirect 301 /discrete-mathematics-structures-dms/ https://rtunotes.in/units-pyqs.html?semester=4&subject=DMS
 Redirect 301 /computer-graphics-and-multimedia/ https://rtunotes.in/units-pyqs.html?semester=6&subject=CGM
-RewriteEngine On
-RewriteCond %{REQUEST_URI} ^/Unit\.html$
-RewriteCond %{QUERY_STRING} ^subject=CGM$
-RewriteRule ^Unit\.html$ https://rtunotes.in/units-pyqs.html?semester=6&subject=CGM [R=301,L]
 Redirect 301 /basic-electrical-engineering-bee/ https://rtunotes.in/units-pyqs.html?semester=2&subject=BEE
 Redirect 301 /basic-mechanical-engineering-bme/ https://rtunotes.in/units-pyqs.html?semester=1&subject=BME
 Redirect 301 /microprocessor-and-interfacempi/ https://rtunotes.in/units-pyqs.html?semester=4&subject=MPI_CSE
@@ -41,7 +49,6 @@ Redirect 301 /7th-semester/ https://rtunotes.in/subject.html?year=4&semester=7
 Redirect 301 /8th-semester/ https://rtunotes.in/subject.html?year=4&semester=8
 Redirect 301 /1st-year-notes/ https://rtunotes.in/semester.html?year=1
 Redirect 301 /2nd-year-notes/ https://rtunotes.in/semester.html?year=2
-
 Redirect 301 /3rd-year-notes/ https://rtunotes.in/semester.html?year=3
 Redirect 301 /4th-year-notes/ https://rtunotes.in/semester.html?year=4
 Redirect 301 /wp-content/uploads/2024/08/CSE-Sylabus-3rd-Sem.pdf https://rtunotes.in/assets/syllabus/CSE-Sylabus-3rd-Sem.pdf
@@ -56,5 +63,5 @@ Redirect 301 /category/uncategorized/ https://rtunotes.in
 Redirect 301 /comments/feed/ https://rtunotes.in
 Redirect 301 /feed/ https://rtunotes.in
 Redirect 301 /about/ https://yuvraj.rtunotes.in
-Redirect 301 /Waiting... https://rtunotes.in	
+Redirect 301 /Waiting... https://rtunotes.in
 Redirect 301 /wp-includes/js/dist/vendor/wp-polyfill-importmap.min.js?ver=1.8.2/ https://rtunotes.in
