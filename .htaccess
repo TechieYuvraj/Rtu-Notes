@@ -39,6 +39,11 @@ Redirect 301 /chemistry/ https://rtunotes.in/units-pyqs.html?semester=1&subject=
 Redirect 301 /human-values-hv/ https://rtunotes.in/units-pyqs.html?semester=1&subject=HV
 Redirect 301 /physics/ https://rtunotes.in/units-pyqs.html?semester=2&subject=EP
 Redirect 301 /engineering-mathematics-2/ https://rtunotes.in/units-pyqs.html?semester=2&subject=EM2
+Redirect 301 /data-structures-and-algorithms-dsa/ https://rtunotes.in/units-pyqs.html?semester=3&subject=DSA
+Redirect 301 /basic-civil-engineering-bce/ https://rtunotes.in/units-pyqs.html?semester=1&subject=BCE
+Redirect 301 /database-management-system-dbms/ https://rtunotes.in/units-pyqs.html?semester=4&subject=DBMS
+Redirect 301 /object-oriented-programming-oops/ https://rtunotes.in/units-pyqs.html?semester=3&subject=OOPs
+
 Redirect 301 /1st-semester/ https://rtunotes.in/subject.html?year=1&semester=1
 Redirect 301 /2nd-semester/ https://rtunotes.in/subject.html?year=1&semester=2
 Redirect 301 /3rd-semester/ https://rtunotes.in/subject.html?year=2&semester=3

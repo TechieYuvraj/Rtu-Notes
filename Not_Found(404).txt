@@ -1,0 +1,5 @@
+URL
+https://rtunotes.in/data-structures-and-algorithms-dsa/
+https://rtunotes.in/basic-civil-engineering-bce/
+https://rtunotes.in/database-management-system-dbms/
+https://rtunotes.in/object-oriented-programming-oops/
