@@ -389,7 +389,7 @@ body {
     margin: 0;
   }
 
-  .custom-button {
+  .category-card .custom-button, .unit-card .custom-button {
     padding: 6px 10px;
     font-size: 12px;
     width: 90%;
