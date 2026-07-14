@@ -156,8 +156,10 @@ body {
 }
 
 .category-list video {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  aspect-ratio: 1;
 }
 
 .category-item {
@@ -165,6 +167,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  flex: 1;
 }
 
 .category-card {
@@ -354,8 +357,22 @@ body {
     width: 100%;
   }
 
+  #category-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+
   .category-item {
-    grid-column: span 2;
+    grid-column: span 1;
+  }
+
+  .category-item h3 {
+    font-size: 0.85rem;
+    word-break: break-word;
+  }
+
+  .category-item p {
+    font-size: 0.75rem;
   }
 
   .category-card, .unit-card {
