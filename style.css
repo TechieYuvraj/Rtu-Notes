@@ -347,9 +347,11 @@ body {
   .category-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 0 10px;
+    gap: 10px;
+    margin: 15px 0;
+    padding: 0;
     justify-items: center;
+    width: 100%;
   }
 
   .category-item {
@@ -358,14 +360,22 @@ body {
 
   .category-card, .unit-card {
     width: 100%;
-    max-width: 180px;
+    max-width: 160px;
     height: auto;
     aspect-ratio: 1;
-    padding: 1rem;
+    padding: 10px 5px;
+    font-size: 0.95rem;
+  }
+
+  .category-card h3, .category-card h4 {
+    font-size: 1rem;
+    margin: 0;
   }
 
   .custom-button {
-    padding: 8px 15px;
-    font-size: 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+    width: 90%;
+    max-width: 100%;
   }
 }
