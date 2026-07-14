@@ -1,9 +1,9 @@
 // Data for years
 const years = [
-  { id: 1, name: "First Year", link: "semester.html?year=1" },
-  { id: 2, name: "Second Year", link: "semester.html?year=2" },
-  { id: 3, name: "Third Year", link: "semester.html?year=3" },
-  { id: 4, name: "Fourth Year", link: "semester.html?year=4" },
+  { id: 1, name: "First<br>Year", link: "semester.html?year=1" },
+  { id: 2, name: "Second<br>Year", link: "semester.html?year=2" },
+  { id: 3, name: "Third<br>Year", link: "semester.html?year=3" },
+  { id: 4, name: "Fourth<br>Year", link: "semester.html?year=4" },
 ];
 
 // Function to load years dynamically
@@ -13,7 +13,7 @@ function loadYears() {
     const card = document.createElement("a");
     card.className = "category-card";
     card.href = year.link;
-    card.textContent = year.name;
+    card.innerHTML = year.name;
     yearList.appendChild(card);
   });
 }
