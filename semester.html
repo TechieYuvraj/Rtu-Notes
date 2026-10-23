@@ -8,6 +8,19 @@
      crossorigin="anonymous"></script>
   <title>Select Semester - RTU Notes</title>
   <meta name="description" content="Select your RTU semester to access official syllabus, subject-wise lecture notes, and solved examination question papers." />
+  <script>
+    (function () {
+      var p = new URLSearchParams(window.location.search);
+      var q = [];
+      ["year"].forEach(function (k) {
+        if (p.has(k)) q.push(k + "=" + encodeURIComponent(p.get(k)));
+      });
+      var c = document.createElement("link");
+      c.rel = "canonical";
+      c.href = "https://rtunotes.in" + window.location.pathname + (q.length ? "?" + q.join("&") : "");
+      document.head.appendChild(c);
+    })();
+  </script>
   <link rel="icon" href="assets/rtunotes.png" type="image/x-icon" />
   <link rel="preload" href="/assets/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin />
