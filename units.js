@@ -284,28 +284,3 @@ const unitsData = {
   // Add more subjects and units as needed
 };
 
-// Load units and PYQs dynamically based on subject parameter
-function loadUnitsAndPYQs() {
-  const subject = getQueryParam("subject");
-  const unitsList = document.getElementById("units-list");
-  const pyqsList = document.getElementById("pyqs-list");
-
-  unitsList.innerHTML = "";
-  pyqsList.innerHTML = "";
-
-  if (!subject) {
-    unitsList.textContent = "Missing subject parameter.";
-    pyqsList.textContent = "Missing subject parameter.";
-    return;
-  }
-
-  const units = unitsData[subject];
-  const pyqs = pyqsData[subject];
-
-  if (!units || !pyqs) {
-    unitsList.textContent = "No data available for this subject.";
-    pyqsList.textContent = "No data available for this subject.";
-    return;
-  }
-}
-

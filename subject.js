@@ -1,106 +1,136 @@
-// Utility to get URL parameters
-function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
+// subject.js - Load subjects dynamically based on semester parameter
 
-// Data for subjects per semester
-// Each subject has an icon class from Font Awesome for display
 const subjectsData = {
   1: [
-    { id: "EM1", name: "Engineering Mathematics-I", icon: "fa-solid fa-book-open-reader" },
-    { id: "HV", name: "Human Values", icon: "fa-solid fa-book-open-reader" },
-    { id: "BCE", name: "Basic Civil Engineering", icon: "fa-solid fa-book-open-reader" },
-    { id: "BME", name: "Basic Mechanical Engineering", icon: "fa-solid fa-book-open-reader" },
-    { id: "EC", name: "Engineering Chemistry", icon: "fa-solid fa-book-open-reader" },
+    { id: "EM1", name: "Engineering Mathematics-I", icon: "fa-solid fa-calculator" },
+    { id: "HV", name: "Human Values", icon: "fa-solid fa-heart" },
+    { id: "BCE", name: "Basic Civil Engineering", icon: "fa-solid fa-building" },
+    { id: "BME", name: "Basic Mechanical Engineering", icon: "fa-solid fa-gear" },
+    { id: "EC", name: "Engineering Chemistry", icon: "fa-solid fa-flask" },
   ],
   2: [
-    { id: "EM2", name: "Engineering Mathematics-II", icon: "fa-solid fa-book-open-reader" },
-    { id: "BEE", name: "Basic Electrical Engineering", icon: "fa-solid fa-book-open-reader" },
-    { id: "EP", name: "Engineering Physics", icon: "fa-solid fa-book-open-reader" },
-    { id: "PPS", name: "Programming for Problem Solving", icon: "fa-solid fa-book-open-reader" },
-    { id: "CS", name: "Communication Skills", icon: "fa-solid fa-book-open-reader" },
+    { id: "EM2", name: "Engineering Mathematics-II", icon: "fa-solid fa-square-root-variable" },
+    { id: "BEE", name: "Basic Electrical Engineering", icon: "fa-solid fa-bolt" },
+    { id: "EP", name: "Engineering Physics", icon: "fa-solid fa-atom" },
+    { id: "PPS", name: "Programming for Problem Solving", icon: "fa-solid fa-code" },
+    { id: "CS", name: "Communication Skills", icon: "fa-solid fa-comments" },
   ],
   3: [
-    { id: "AEM", name: "Advanced Engineering Mathematics", icon: "fa-solid fa-book-open-reader" },
-    { id: "MEFA", name: "Managerial Economics and Financial Accounting", icon: "fa-solid fa-book-open-reader" },
-    { id: "DE", name: "Digital Electronics", icon: "fa-solid fa-book-open-reader" },
-    { id: "DSA", name: "Data Structures and Algorithm", icon: "fa-solid fa-book-open-reader" },
-    { id: "OOPs", name: "Object Oriented Programming", icon: "fa-solid fa-book-open-reader" },
-    { id: "SE", name: "Software engineering", icon: "fa-solid fa-book-open-reader" },
+    { id: "AEM", name: "Advanced Engineering Mathematics", icon: "fa-solid fa-calculator" },
+    { id: "MEFA", name: "Managerial Economics and Financial Accounting", icon: "fa-solid fa-chart-line" },
+    { id: "DE", name: "Digital Electronics", icon: "fa-solid fa-microchip" },
+    { id: "DSA", name: "Data Structures and Algorithm", icon: "fa-solid fa-network-wired" },
+    { id: "OOPs", name: "Object Oriented Programming", icon: "fa-solid fa-laptop-code" },
+    { id: "SE", name: "Software Engineering", icon: "fa-solid fa-diagram-project" },
   ],
   4: [
-    { id: "DMS", name: "Discrete Mathematics Structure", icon: "fa-solid fa-book-open-reader" },
-    { id: "TC", name: "Technical Communication", icon: "fa-solid fa-book-open-reader" },
-    { id: "MPI_CSE", name: "Microprocessor & Interfaces", icon: "fa-solid fa-book-open-reader" },
-    { id: "DBMS", name: "Database Management System", icon: "fa-solid fa-book-open-reader" },
-    { id: "TOC", name: "Theory Of Computation", icon: "fa-solid fa-book-open-reader" },
-    { id: "DCCN", name: "Data Communication and Computer Networks", icon: "fa-solid fa-book-open-reader" },
+    { id: "DMS", name: "Discrete Mathematics Structure", icon: "fa-solid fa-brain" },
+    { id: "TC", name: "Technical Communication", icon: "fa-solid fa-bullhorn" },
+    { id: "MPI_CSE", name: "Microprocessor & Interfaces (CSE)", icon: "fa-solid fa-microchip" },
+    { id: "DBMS", name: "Database Management System", icon: "fa-solid fa-database" },
+    { id: "TOC", name: "Theory Of Computation", icon: "fa-solid fa-sitemap" },
+    { id: "POC", name: "Principle of Communication", icon: "fa-solid fa-tower-broadcast" },
+    { id: "DCCN", name: "Data Communication and Computer Networks", icon: "fa-solid fa-network-wired" },
   ],
   5: [
-    { id: "ITC", name: "Information Theory and Computation", icon: "fa-solid fa-book-open-reader" },
-    { id: "OS", name: "Operating System", icon: "fa-solid fa-book-open-reader" },
-    { id: "CGM", name: "Computer Graphics and Multimedia", icon: "fa-solid fa-book-open-reader" },
-    { id: "AOA", name: "Analysis of Algorithm", icon: "fa-solid fa-book-open-reader" },
-    { id: "CD", name: "Compiler Design", icon: "fa-solid fa-book-open-reader" },
-    { id: "WC", name: "Wireless Communication", icon: "fa-solid fa-book-open-reader" },
-    { id: "MPI_IT", name: "Microprocessor & Interfaces", icon: "fa-solid fa-book-open-reader" },
+    { id: "ITC", name: "Information Theory and Computation", icon: "fa-solid fa-circle-nodes" },
+    { id: "OS", name: "Operating System", icon: "fa-solid fa-desktop" },
+    { id: "CGM", name: "Computer Graphics and Multimedia", icon: "fa-solid fa-palette" },
+    { id: "AOA", name: "Analysis of Algorithm", icon: "fa-solid fa-chart-simple" },
+    { id: "CD", name: "Compiler Design", icon: "fa-solid fa-file-code" },
+    { id: "WC", name: "Wireless Communication", icon: "fa-solid fa-wifi" },
+    { id: "MPI_IT", name: "Microprocessor & Interfaces (IT)", icon: "fa-solid fa-microchip" },
   ],
   6: [
-    { id: "DIP", name: "Digital Image Processing", icon: "fa-solid fa-book-open-reader" },
-    { id: "ML", name: "Machine Learning", icon: "fa-solid fa-book-open-reader" },
-    { id: "CAO", name: "Computer Architecture and Organizaion", icon: "fa-solid fa-book-open-reader" },
-    { id: "ISS", name: "Information Security System", icon: "fa-solid fa-book-open-reader" },
-    { id: "AI", name: "Artificial Intelligence", icon: "fa-solid fa-book-open-reader" },
-    { id: "DS", name: "Distributed System", icon: "fa-solid fa-book-open-reader" },
-    { id: "CC", name: "Cloud Computing", icon: "fa-solid fa-book-open-reader" },
+    { id: "DIP", name: "Digital Image Processing", icon: "fa-solid fa-image" },
+    { id: "ML", name: "Machine Learning", icon: "fa-solid fa-robot" },
+    { id: "CAO", name: "Computer Architecture and Organization", icon: "fa-solid fa-server" },
+    { id: "ISS", name: "Information Security System", icon: "fa-solid fa-shield-halved" },
+    { id: "AI", name: "Artificial Intelligence", icon: "fa-solid fa-brain" },
+    { id: "DS", name: "Distributed System", icon: "fa-solid fa-network-wired" },
+    { id: "CC", name: "Cloud Computing", icon: "fa-solid fa-cloud" },
   ],
-  // 7: [
-  //   { id: "EM2", name: "Engineering Mathematics-II", icon: "fa-solid fa-book-open-reader" },
-  //   { id: "BEE", name: "Basic Electrical Engineering", icon: "fa-solid fa-book-open-reader" },
-  //   { id: "EP", name: "Engineering Physics", icon: "fa-solid fa-book-open-reader" },
-  //   { id: "PPS", name: "Programming for Problem Solving", icon: "fa-solid fa-book-open-reader" },
-  //   { id: "CS", name: "Communication Skills", icon: "fa-solid fa-book-open-reader" },
-  // ],
-  // 8: [
-  //   { id: "EM2", name: "Engineering Mathematics-II", icon: "fa-solid fa-book-open-reader" },
-  //   { id: "BEE", name: "Basic Electrical Engineering", icon: "fa-solid fa-book-open-reader" },
-  //   { id: "EP", name: "Engineering Physics", icon: "fa-solid fa-book-open-reader" },
-  //   { id: "PPS", name: "Programming for Problem Solving", icon: "fa-solid fa-book-open-reader" },
-  //   { id: "CS", name: "Communication Skills", icon: "fa-solid fa-book-open-reader" },
-  // ]
+  7: [
+    { id: "BDA", name: "Big Data Analytics", status: "coming_soon", icon: "fa-solid fa-database" },
+    { id: "IOT", name: "Internet of Things", status: "coming_soon", icon: "fa-solid fa-microchip" },
+    { id: "IS", name: "Information Security", status: "coming_soon", icon: "fa-solid fa-lock" },
+  ],
+  8: [
+    { id: "DM", name: "Disaster Management", status: "coming_soon", icon: "fa-solid fa-triangle-exclamation" },
+    { id: "CS_SEC", name: "Cyber Security", status: "coming_soon", icon: "fa-solid fa-shield-cat" },
+  ],
 };
 
-// Load subjects dynamically based on semester parameter
+function getSemesterYear(sem) {
+  const s = parseInt(sem, 10);
+  if (s <= 2) return 1;
+  if (s <= 4) return 2;
+  if (s <= 6) return 3;
+  return 4;
+}
+
 function loadSubjects() {
   const semester = getQueryParam("semester");
   const subjectList = document.getElementById("subject-list");
+  const pageTitle = document.getElementById("subject-page-title");
+  if (!subjectList) return;
+
   subjectList.innerHTML = "";
 
   if (!semester || !subjectsData[semester]) {
-    subjectList.textContent = "Invalid or missing semester parameter.";
+    if (pageTitle) pageTitle.textContent = "Select Semester";
+    subjectList.innerHTML = `
+      <div class="empty-fallback-box">
+        <p>No valid semester was specified. Please choose a semester:</p>
+        <div class="fallback-sem-grid">
+          <a href="subject.html?semester=1" class="custom-button">Semester 1</a>
+          <a href="subject.html?semester=2" class="custom-button">Semester 2</a>
+          <a href="subject.html?semester=3" class="custom-button">Semester 3</a>
+          <a href="subject.html?semester=4" class="custom-button">Semester 4</a>
+          <a href="subject.html?semester=5" class="custom-button">Semester 5</a>
+          <a href="subject.html?semester=6" class="custom-button">Semester 6</a>
+          <a href="subject.html?semester=7" class="custom-button">Semester 7</a>
+          <a href="subject.html?semester=8" class="custom-button">Semester 8</a>
+        </div>
+      </div>
+    `;
     return;
   }
 
-  subjectsData[semester].forEach((subject) => {
-    const card = document.createElement("a");
-    card.className = "category-card";
-    card.href = `units-pyqs.html?semester=${semester}&subject=${subject.id}`;
-    card.innerHTML = `<i class="${subject.icon}" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>${subject.name}`;
-    subjectList.appendChild(card);
-  });
-}
+  const year = getQueryParam("year") || getSemesterYear(semester);
+  if (pageTitle) {
+    pageTitle.textContent = `Semester ${semester} Subjects`;
+  }
+  document.title = `Semester ${semester} Subjects - RTU Notes`;
 
-// Mobile menu toggle
-function setupMenuToggle() {
-  const menuToggle = document.getElementById("mobile-menu");
-  const navLinks = document.querySelector(".nav-links");
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+  if (typeof renderBreadcrumbs === "function") {
+    renderBreadcrumbs([
+      { label: "Home", href: "/" },
+      { label: "Years", href: "year.html" },
+      { label: `Year ${year}`, href: `semester.html?year=${year}` },
+      { label: `Semester ${semester}` }
+    ]);
+  }
+
+  subjectsData[semester].forEach((subject) => {
+    const isComingSoon = subject.status === "coming_soon";
+    const card = document.createElement(isComingSoon ? "div" : "a");
+    card.className = "category-card subject-card";
+
+    if (!isComingSoon) {
+      card.href = `units-pyqs.html?semester=${semester}&subject=${subject.id}`;
+    }
+
+    card.innerHTML = `
+      <div class="subject-card-code">${subject.id}</div>
+      <h3>${subject.name}</h3>
+      ${isComingSoon ? '<span class="badge-coming-soon"><i class="fas fa-clock"></i> Coming Soon</span>' : '<span class="badge-available">Notes & PYQs <i class="fas fa-arrow-right"></i></span>'}
+    `;
+
+    subjectList.appendChild(card);
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   loadSubjects();
-  setupMenuToggle();
 });

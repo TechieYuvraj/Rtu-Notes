@@ -6,11 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5158112570154153"
      crossorigin="anonymous"></script>
-  <title>RTU Notes</title>
+  <title>Select Subject - RTU Notes</title>
   <link rel="canonical" href="https://rtunotes.in/subject.html" />
+  <meta name="description" content="Browse RTU engineering subjects to find unit-wise lecture notes, syllabus, and solved previous year question papers (PYQs)." />
   <link rel="icon" href="assets/rtunotes.png" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css?v=2.0" />
-  <script defer src="subject.js?v=2.0"></script>
+  <link rel="preload" href="/assets/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="style.css?v=2.5" />
+  <script defer src="common.js?v=2.3"></script>
+  <script defer src="subject.js?v=2.1"></script>
 </head>
 
 <body>
@@ -19,17 +23,20 @@
       <a href="/" class="logo">RTU Notes</a>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="year.html">Year</a></li>
-        <li><a href="https://yuvraj.rtunotes.in">Contact Me</a></li>
+        <li><a href="year.html">Years</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScYcvcNuQ6L2e2zpklMp61QYEjDpIHfApVYtGJNgnVY3m0-NA/viewform" target="_blank" rel="noopener noreferrer">Request / Contribute</a></li>
+        <li><a href="https://yuvraj.rtunotes.in" target="_blank" rel="noopener noreferrer">Contact Me</a></li>
       </ul>
-      <div class="menu-toggle" id="mobile-menu">
+      <div class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu">
         <i class="fas fa-bars"></i>
       </div>
     </div>
   </nav>
 
+  <div class="container" id="breadcrumb-trail"></div>
+
   <main class="categories">
-    <h2>Subjects</h2>
+    <h2 id="subject-page-title">Subjects</h2>
     <div class="category-list" id="subject-list">
       <!-- Subjects will be loaded here dynamically -->
     </div>
@@ -41,8 +48,8 @@
         <a href="https://instagram.com/tech_soul_boy" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com/in/yuvraj-pratap-singh-802773256" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
-      <p>© 2023 All rights reserved to <a href="https://arytech.in" target="_blank" rel="noopener noreferrer">ARY Technologies</a>.</p>
-      <a href="privacy_policy.txt" target="_blank" class="privacy-policy">Privacy Policy</a>
+      <p>© <span id="dynamic-year">2026</span> All rights reserved to <a href="https://dev.rtunotes.in/" target="_blank" rel="noopener noreferrer">Yuvraj Pratap Singh</a>.</p>
+      <a href="privacy-policy.html" class="privacy-policy">Privacy Policy</a>
     </div>
   </footer>
 </body>

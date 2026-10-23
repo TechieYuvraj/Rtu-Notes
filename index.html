@@ -19,8 +19,12 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5158112570154153"
      crossorigin="anonymous"></script>
     <link rel="icon" href="assets/rtunotes.png" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css?v=2.0" />
-    <script defer src="semester.js?v=2.0"></script>
+    <link rel="preload" href="/assets/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/Community-Driven.webm" as="video" type="video/webm" fetchpriority="high" />
+    <link rel="stylesheet" href="style.css?v=2.5" />
+    <script defer src="common.js?v=2.3"></script>
+    <script defer src="index.js?v=2.1"></script>
 </head>
 
 <body>
@@ -28,9 +32,11 @@
         <div class="container">
             <a href="/" class="logo">RTU Notes</a>
             <ul class="nav-links">
-                <li><a href="https://yuvraj.rtunotes.in" target="_blank">Contact Me</a></li>
+                <li><a href="year.html">Browse Years</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScYcvcNuQ6L2e2zpklMp61QYEjDpIHfApVYtGJNgnVY3m0-NA/viewform" target="_blank" rel="noopener noreferrer">Request / Contribute</a></li>
+                <li><a href="https://yuvraj.rtunotes.in" target="_blank" rel="noopener noreferrer">Contact Me</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu">
+            <div class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -40,7 +46,14 @@
         <div class="container hero-content">
             <h1>RTU Notes</h1>
             <p>Simplifying Engineering Education</p>
-            <a href="year.html" class="custom-button">Get Started</a>
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="subject-search" placeholder="Search subjects (e.g. DBMS, Operating System, DSA, Maths)..." autocomplete="off" aria-label="Search subjects" />
+                </div>
+                <div id="search-results" class="search-results" style="display: none;"></div>
+            </div>
+            <a href="year.html" class="custom-button">Explore by Year</a>
         </div>
     </header>
 
@@ -71,7 +84,7 @@
         <div class="category-list" id="category-list">
 
             <div class="category-item">
-                <video autoplay loop muted playsinline>
+                <video autoplay loop muted playsinline fetchpriority="high" preload="auto">
                     <source src="assets/Community-Driven.webm" type="video/webm">
                 </video>
                 <h3>Community Driven</h3>
@@ -79,7 +92,7 @@
             </div>
 
             <div class="category-item">
-                <video autoplay loop muted playsinline>
+                <video autoplay loop muted playsinline preload="metadata">
                     <source src="assets/Comprehensive-Coverage.webm" type="video/webm">
                 </video>
                 <h3>Comprehensive Coverage</h3>
@@ -87,7 +100,7 @@
             </div>
 
             <div class="category-item">
-                <video autoplay loop muted playsinline>
+                <video autoplay loop muted playsinline preload="metadata">
                     <source src="assets/Quality-Content.webm" type="video/webm">
                 </video>
                 <h3>Quality Content</h3>
@@ -105,8 +118,8 @@
                 <a href="https://www.linkedin.com/in/yuvraj-pratap-singh-802773256" aria-label="LinkedIn"><i
                         class="fab fa-linkedin-in"></i></a>
             </div>
-            <p>© 2023 All rights reserved to <a href="https://arytech.in" target="_blank" rel="noopener noreferrer">ARY Technologies</a>.</p>
-            <a href="privacy_policy.txt" target="_blank" class="privacy-policy">Privacy Policy</a>
+            <p>© <span id="dynamic-year">2026</span> All rights reserved to <a href="https://dev.rtunotes.in/" target="_blank" rel="noopener noreferrer">Yuvraj Pratap Singh</a>.</p>
+            <a href="privacy-policy.html" class="privacy-policy">Privacy Policy</a>
         </div>
     </footer>
 </body>

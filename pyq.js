@@ -186,62 +186,180 @@ const pyqsData = {
 // Load units and PYQs dynamically based on subject parameter
 function loadUnitsAndPYQs() {
     const subject = getQueryParam("subject");
+    const semester = getQueryParam("semester");
     const unitsList = document.getElementById("units-list");
     const pyqsList = document.getElementById("pyqs-list");
+    const subjectHeader = document.getElementById("subject-header-banner");
+
+    if (!unitsList || !pyqsList) return;
 
     unitsList.innerHTML = "";
     pyqsList.innerHTML = "";
 
+    // 1. Edge Case: Missing subject query param
     if (!subject) {
-        unitsList.textContent = "Missing subject parameter.";
-        pyqsList.textContent = "Missing subject parameter.";
+        if (subjectHeader) {
+            subjectHeader.innerHTML = `
+                <div class="subject-header-card">
+                    <h1>Select a Subject</h1>
+                    <p>No subject was specified in the URL. Please pick a semester below:</p>
+                </div>
+            `;
+        }
+        unitsList.innerHTML = `
+            <div class="empty-fallback-box">
+                <div class="fallback-sem-grid">
+                    <a href="subject.html?semester=1" class="custom-button">Semester 1</a>
+                    <a href="subject.html?semester=2" class="custom-button">Semester 2</a>
+                    <a href="subject.html?semester=3" class="custom-button">Semester 3</a>
+                    <a href="subject.html?semester=4" class="custom-button">Semester 4</a>
+                    <a href="subject.html?semester=5" class="custom-button">Semester 5</a>
+                    <a href="subject.html?semester=6" class="custom-button">Semester 6</a>
+                </div>
+            </div>
+        `;
+        const pyqSection = pyqsList.closest(".categories");
+        if (pyqSection) pyqSection.style.display = "none";
         return;
     }
 
-    const units = unitsData[subject];
-    const pyqs = pyqsData[subject];
+    // 2. Resolve subject metadata from catalog
+    const subjectInfo = typeof getSubjectById === "function" ? getSubjectById(subject) : null;
+    const resolvedName = subjectInfo ? subjectInfo.name : subject;
+    const resolvedSem = semester || (subjectInfo ? subjectInfo.semester : null);
+    const resolvedYear = subjectInfo ? subjectInfo.year : (resolvedSem ? Math.ceil(resolvedSem / 2) : 1);
 
-    if (!units || !pyqs) {
-        unitsList.textContent = "No data available for this subject.";
-        pyqsList.textContent = "No data available for this subject.";
-        return;
+    document.title = `${resolvedName} (${subject}) Notes & Solved PYQs - RTU Notes`;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+        metaDesc.setAttribute(
+            "content",
+            `Download complete unit-wise lecture notes, syllabus, and RTU solved question papers (PYQs) for ${resolvedName} (${subject}).`
+        );
     }
 
-    units.forEach((unit) => {
-        const card = document.createElement("div");
-        card.className = "unit-card";
-        card.innerHTML = `
-      <span>${unit.name}</span>
-      <a href="${unit.pdf}" target="_blank" rel="noopener noreferrer" class="custom-button" aria-label="Open ${unit.name} PDF">
-        <i class="fas fa-file-pdf"></i> View
-      </a>
-    `;
-        unitsList.appendChild(card);
-    });
+    // 3. Render Breadcrumbs
+    if (typeof renderBreadcrumbs === "function") {
+        const crumbs = [
+            { label: "Home", href: "/" },
+            { label: "Years", href: "year.html" },
+        ];
+        if (resolvedYear) {
+            crumbs.push({ label: `Year ${resolvedYear}`, href: `semester.html?year=${resolvedYear}` });
+        }
+        if (resolvedSem) {
+            crumbs.push({ label: `Semester ${resolvedSem}`, href: `subject.html?year=${resolvedYear}&semester=${resolvedSem}` });
+        }
+        crumbs.push({ label: subject });
+        renderBreadcrumbs(crumbs);
+    }
 
-    pyqs.forEach((pyq) => {
-        const card = document.createElement("div");
-        card.className = "unit-card";
-        card.innerHTML = `
-      <span>${pyq.name}</span>
-      <a href="${pyq.pdf}" target="_blank" rel="noopener noreferrer" class="custom-button" aria-label="Open ${pyq.name} PDF">
-        <i class="fas fa-file-pdf"></i> View
-      </a>
-    `;
-        pyqsList.appendChild(card);
-    });
-}
+    // 4. Render Subject Header Banner
+    if (subjectHeader) {
+        subjectHeader.innerHTML = `
+            <div class="subject-header-card">
+                <div class="subject-tags-row">
+                    <span class="badge-tag code-tag">${subject}</span>
+                    ${resolvedSem ? `<span class="badge-tag sem-tag">Semester ${resolvedSem}</span>` : ""}
+                    ${resolvedYear ? `<span class="badge-tag year-tag">Year ${resolvedYear}</span>` : ""}
+                </div>
+                <h1>${resolvedName}</h1>
+                <p>Complete unit-wise lecture notes and RTU solved question papers.</p>
+            </div>
+        `;
+    }
 
-// Mobile menu toggle
-function setupMenuToggle() {
-    const menuToggle = document.getElementById("mobile-menu");
-    const navLinks = document.querySelector(".nav-links");
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
+    // 5. Decoupled Rendering: Units
+    const units = typeof unitsData !== "undefined" ? unitsData[subject] : null;
+    if (Array.isArray(units) && units.length > 0) {
+        units.forEach((unit) => {
+            const card = document.createElement("div");
+            card.className = "unit-card";
+            const isAvailable = isValidResourceUrl(unit.pdf);
+
+            const unitRequestUrl = typeof getFeedbackFormUrl === "function"
+                ? getFeedbackFormUrl({
+                    subject: resolvedName,
+                    unit: unit.name,
+                    semester: resolvedSem,
+                    action: "Request Lecture Notes for a Subject",
+                })
+                : "https://yuvraj.rtunotes.in";
+
+            card.innerHTML = `
+                <div class="unit-card-title">${unit.name}</div>
+                ${
+                    isAvailable
+                        ? `<a href="${unit.pdf}" target="_blank" rel="noopener noreferrer" class="custom-button" aria-label="Open ${unit.name} PDF">
+                             <i class="fas fa-file-pdf"></i> View Notes
+                           </a>`
+                        : `<span class="badge-coming-soon"><i class="fas fa-clock"></i> In Preparation</span>
+                           <a href="${unitRequestUrl}" target="_blank" rel="noopener noreferrer" class="report-link">
+                             <i class="fas fa-envelope"></i> Request Notes
+                           </a>`
+                }
+            `;
+            unitsList.appendChild(card);
+        });
+    } else {
+        const notesRequestUrl = typeof getFeedbackFormUrl === "function"
+            ? getFeedbackFormUrl({
+                subject: resolvedName,
+                semester: resolvedSem,
+                action: "Request Lecture Notes for a Subject",
+            })
+            : "https://yuvraj.rtunotes.in";
+
+        unitsList.innerHTML = `
+            <div class="empty-state-card">
+                <i class="fas fa-book-open"></i>
+                <p>Lecture notes for <strong>${resolvedName}</strong> are currently being curated.</p>
+                <a href="${notesRequestUrl}" target="_blank" rel="noopener noreferrer" class="custom-button">
+                    <i class="fas fa-paper-plane"></i> Request Notes
+                </a>
+            </div>
+        `;
+    }
+
+    // 6. Decoupled Rendering: PYQs
+    const rawPyqs = typeof pyqsData !== "undefined" ? pyqsData[subject] : null;
+    const validPyqs = Array.isArray(rawPyqs)
+        ? rawPyqs.filter((p) => p.name !== "Waiting..." && isValidResourceUrl(p.pdf))
+        : [];
+
+    if (validPyqs.length > 0) {
+        validPyqs.forEach((pyq) => {
+            const card = document.createElement("div");
+            card.className = "unit-card";
+            card.innerHTML = `
+                <div class="unit-card-title">${pyq.name}</div>
+                <a href="${pyq.pdf}" target="_blank" rel="noopener noreferrer" class="custom-button" aria-label="Open ${pyq.name} PDF">
+                    <i class="fas fa-file-pdf"></i> View Solved PYQ
+                </a>
+            `;
+            pyqsList.appendChild(card);
+        });
+    } else {
+        const pyqRequestUrl = typeof getFeedbackFormUrl === "function"
+            ? getFeedbackFormUrl({
+                subject: resolvedName,
+                semester: resolvedSem,
+                action: "Request Previous Year Solved Papers (PYQs)",
+            })
+            : "https://yuvraj.rtunotes.in";
+
+        pyqsList.innerHTML = `
+            <div class="empty-state-card">
+                <i class="fas fa-file-lines"></i>
+                <p>Solved past examination papers for <strong>${resolvedName}</strong> are being processed.</p>
+                <a href="${pyqRequestUrl}" target="_blank" rel="noopener noreferrer" class="custom-button">
+                    <i class="fas fa-paper-plane"></i> Request Solved Paper
+                </a>
+            </div>
+        `;
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     loadUnitsAndPYQs();
-    setupMenuToggle();
 });
