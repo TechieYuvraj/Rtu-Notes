@@ -222,7 +222,41 @@ function renderBreadcrumbs(items) {
   container.appendChild(nav);
 }
 
+// Ensure dynamic parameter pages have self-referential canonical tags for Google Search
+function setupCanonicalTag() {
+  const allowedParams = ["year", "semester", "subject"];
+  let url;
+  try {
+    url = new URL(window.location.href);
+  } catch (e) {
+    return;
+  }
+
+  const cleanParams = new URLSearchParams();
+  allowedParams.forEach((key) => {
+    if (url.searchParams.has(key)) {
+      cleanParams.set(key, url.searchParams.get(key));
+    }
+  });
+
+  const queryStr = cleanParams.toString();
+  let path = url.pathname;
+  if (!path.startsWith("/")) path = "/" + path;
+  if (path === "/index.html") path = "/";
+
+  const canonicalUrl = `https://rtunotes.in${path}${queryStr ? `?${queryStr}` : ""}`;
+
+  let canonicalLink = document.querySelector('link[rel="canonical"]');
+  if (!canonicalLink) {
+    canonicalLink = document.createElement("link");
+    canonicalLink.setAttribute("rel", "canonical");
+    document.head.appendChild(canonicalLink);
+  }
+  canonicalLink.setAttribute("href", canonicalUrl);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  setupCanonicalTag();
   setupMenuToggle();
   initDynamicFooter();
 });
